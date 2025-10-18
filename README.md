@@ -1,1 +1,1 @@
-Change file `settings_default.py` to `settings.py` and change the `SECRET_KEY`
+Rename the file `settings_default.py` to `settings.py` and change the `SECRET_KEY`
