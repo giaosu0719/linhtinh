@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Đang chuyển hướng...</title>
+  <style>
+    @keyframes color {
+      0%   { background: #33CCCC; }
+      20%  { background: #33CC36; }
+      40%  { background: #B8CC33; }
+      60%  { background: #FCCA00; }
+      80%  { background: #33CC36; }
+      100% { background: #33CCCC; }
+    }
+
+    body {
+      background: #33CCCC;
+      animation: color 9s infinite linear;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 2em;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+      font-size: 1.2em;
+      margin: 0;
+    }
+
+    .countdown {
+      font-weight: bold;
+      color: #fff8b0;
+    }
+
+    .url {
+      background: rgba(255, 255, 255, 0.25);
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-top: 15px;
+      font-size: 1em;
+      word-break: break-all;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9em;
+      color: #f5f5f5;
+      text-shadow: 0 0 4px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <h1>Đang chuyển hướng bạn đến trang đích...</h1>
+  <p>Bạn sẽ được chuyển hướng trong <span class="countdown">5</span> giây.</p>
+  <!-- <div class="url">{{ url_original }}</div> -->
+
+  <script>
+    let timeLeft = 5;
+    const countdown = document.querySelector(".countdown");
+    const timer = setInterval(() => {
+      timeLeft--;
+      countdown.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(timer);
+        window.location.href = "{{ url_original }}";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
