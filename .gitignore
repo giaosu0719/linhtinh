@@ -1,3 +1,5 @@
 db.sqlite3
 app/settings.py
 */__pycache__
+*/*/__pycache__
+static_tmp
