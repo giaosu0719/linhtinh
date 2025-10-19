@@ -4,6 +4,8 @@ class Blogs(models.Model):
     title = models.CharField(max_length = 200)
     content = models.TextField(max_length = 69420)
     pub_date = models.DateTimeField("date published")
+    
+    show_on_list = models.BooleanField(default = True)
 
     def __str__(self):
         return self.title
