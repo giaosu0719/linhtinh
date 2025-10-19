@@ -3,4 +3,3 @@ app/settings.py
 */__pycache__
 */*/__pycache__
 static_tmp
-gunicorn.conf
