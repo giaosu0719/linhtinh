@@ -22,6 +22,3 @@ def blog_view(request, blog_title):
         "pub_date_blog": blog.pub_date,
     }
     return HttpResponse(blog_template.render(context, request))
-
-def blogs_list(request):
-    ...

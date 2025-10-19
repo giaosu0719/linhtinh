@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'markdownify.apps.MarkdownifyConfig',
     'shortlink.apps.ShortlinkConfig',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
@@ -40,6 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+MARKDOWNIFY = {
+    "default": {
+        "BLEACH": False
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
