@@ -89,12 +89,15 @@
             box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
+        .header-info-wrapper { text-align: center; padding-bottom: 15px; border-bottom: 2px solid rgba(255, 204, 204, 0.2); }
+
     </style>
 </head>
 <body>
     <div class="blogs-container">
-        {% if list_date_and_blogs %}
-            <h1>Blogs</h1>
+        <h1>Blogs</h1>
+        <div class="header-info-wrapper"></div>
+        {% if list_date_and_blogs and list_date_and_blogs|length > 0 %}
             {% for title_blog, date_blogs in list_date_and_blogs %}
                 <div class="blog-item">
                     <h3><a href="/blog/{{ title_blog }}">{{ title_blog }}</a></h3>
@@ -102,8 +105,9 @@
                 </div>
             {% endfor %}
         {% else %}
-            <h1>nothing...</h1>
+            <h3>nothing...</h3>
         {% endif %}
+        
     </div>
     <footer>
         © 2025 GiaoSu

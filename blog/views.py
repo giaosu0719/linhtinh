@@ -7,7 +7,7 @@ def index(request):
     list_blogs = Blogs.objects.order_by("-pub_date")
     date = [b.pub_date for b in list_blogs]
 
-    list_date_and_blogs = zip(list_blogs,date)
+    list_date_and_blogs = list(zip(list_blogs,date))
 
     template = loader.get_template("blogs_list.html")
 
