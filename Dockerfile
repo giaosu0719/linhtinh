@@ -1,5 +1,9 @@
 # Stage 1: Base build stage
 FROM python:3.13-slim AS builder
+
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get install -y git
  
 # Create the app directory
 RUN mkdir /app
