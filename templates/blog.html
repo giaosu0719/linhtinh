@@ -1,13 +1,14 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+{% load markdownify %}
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - {{ title_blog }}</title>
+  <meta charset="utf-8"/>
+  <title>Blog - {{ title_blog }}</title>
 </head>
 <body>
-    <h1> {{ title_blog }} </h1>
-    <a> {{ content_blog }}  </a>
+  <h1>{{ title_blog }}</h1>
+  <a>{{ pub_date_blog }}</a>
+  {{ content_blog | markdownify }}
 </body>
 </html>

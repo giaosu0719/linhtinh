@@ -3,9 +3,8 @@ from django.http import HttpResponse
 from django.template import loader
 from .models import Blogs
 
-
 def index(request):
-    template = loader.get_template("index.html")
+    template = loader.get_template("blogs_list.html")
     return HttpResponse(template.render())
 
 def blog_view(request, blog_title):
@@ -20,5 +19,9 @@ def blog_view(request, blog_title):
     context = {
         "content_blog": blog.content,
         "title_blog": blog.title,
+        "pub_date_blog": blog.pub_date,
     }
     return HttpResponse(blog_template.render(context, request))
+
+def blogs_list(request):
+    ...
