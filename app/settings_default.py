@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'markdownify.apps.MarkdownifyConfig',
     'shortlink.apps.ShortlinkConfig',
     'blog.apps.BlogConfig',
+    'misc.apps.MiscConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,6 +131,10 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = BASE_DIR / "static_tmp"
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = BASE_DIR / "media"
 
 
 STATICFILES_DIRS = [
