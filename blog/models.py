@@ -7,5 +7,9 @@ class Blogs(models.Model):
     
     show_on_list = models.BooleanField(default = True)
 
+    class Meta:
+        verbose_name = "Blog"
+        verbose_name_plural = "Blogs"
+
     def __str__(self):
         return self.title

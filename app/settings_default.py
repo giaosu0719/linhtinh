@@ -33,7 +33,6 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'wpadmin',
     'markdownify.apps.MarkdownifyConfig',
-    'shortlink.apps.ShortlinkConfig',
     'blog.apps.BlogConfig',
     'misc.apps.MiscConfig',
     'django.contrib.admin',

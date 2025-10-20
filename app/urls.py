@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("robots.txt", serve, {"path": "robots.txt", "document_root": settings.STATICFILES_DIRS[0]}),
     path('blog/', include("blog.urls")),
-    path('', include("shortlink.urls")),
+    path('', include("misc.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 if settings.DEBUG:
