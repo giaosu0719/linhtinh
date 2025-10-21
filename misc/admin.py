@@ -9,8 +9,8 @@ class FileAdmin(admin.ModelAdmin):
 
 class ShortenerAdmin(admin.ModelAdmin):
 
-    list_display = ["url_original", "url_new", "domain", "instant_forward"]
-    list_filter = ["domain", "instant_forward"]
+    list_display = ["url_original", "url_new", "domain", "instant_forward", "disable"]
+    list_filter = ["domain", "instant_forward", "disable"]
 
 class DomainAdmin(admin.ModelAdmin):
 

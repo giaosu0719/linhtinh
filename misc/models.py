@@ -43,6 +43,7 @@ class Domain(models.Model):
 
 class Shortener(models.Model):
 
+    disable = models.BooleanField(default = False)
     url_original = models.URLField(max_length = 512, unique = True)
     url_new = models.CharField(max_length = 25, unique = True)
     instant_forward = models.BooleanField(default = False)

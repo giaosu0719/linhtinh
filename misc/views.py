@@ -29,8 +29,12 @@ def forwarding(request, short_url):
     else:
         short_full = f"{request.get_host()}/{short_url}"
 
+    if url.disable:
+        return HttpResponse(not_found_404_template.render())
+
     if url.instant_forward:
         return HttpResponseRedirect(url.url_original)
+    
 
     context = {
         "url_original": url.url_original,
