@@ -25,7 +25,7 @@ def blog_view(request, blog_title):
     try:
         blog = get_object_or_404(Blogs, title = blog_title)
     except:
-        return HttpResponse(not_found_404_template.render())
+        return HttpResponse(not_found_404_template.render(), status = 404)
 
     context = {
         "content_blog": blog.content,

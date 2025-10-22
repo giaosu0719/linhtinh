@@ -16,21 +16,21 @@ def forwarding(request, short_url):
     try:
         url = get_object_or_404(Shortener, url_new=short_url)
     except:
-        return HttpResponse(not_found_404_template.render())
+        return HttpResponse(not_found_404_template.render(), status = 404)
 
     if url.domain:
         expected_domain = url.domain.domain_custom.strip()
         current_domain = request.get_host().strip()
 
         if expected_domain != current_domain:
-            return HttpResponse(not_found_404_template.render())
+            return HttpResponse(not_found_404_template.render(), status = 404)
 
         short_full = f"{expected_domain}/{short_url}"
     else:
         short_full = f"{request.get_host()}/{short_url}"
 
     if url.disable:
-        return HttpResponse(not_found_404_template.render())
+        return HttpResponse(not_found_404_template.render(), status = 404)
 
     if url.instant_forward:
         return HttpResponseRedirect(url.url_original)

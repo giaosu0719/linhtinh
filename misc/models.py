@@ -20,8 +20,8 @@ file_upload_path = RandomFileName("")
 class File(models.Model):
 
     name_file = models.CharField(max_length = 69,unique = True)
-    file_upload = models.FileField(upload_to=file_upload_path)
-    upload_date = models.DateTimeField(auto_now_add=True)
+    file_upload = models.FileField(upload_to = file_upload_path)
+    upload_date = models.DateTimeField(auto_now_add = True)
 
     def __str__(self):
         return os.path.basename(self.file_upload.name)
